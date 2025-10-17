@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کافه مدرن - قهوه پیشرفته</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ریست پایه */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #4A2C2A; /* قهوه‌ای تیره برای تم مدرن لوکس */
+            color: #F5F5DC; /* کرم روشن برای متن */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* هدر با تم پیشرفته */
+        header {
+            background: linear-gradient(135deg, #4A2C2A, #6B3E3C);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: background 0.3s ease;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #D4AF37; /* طلایی برای لوگو */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: #F5F5DC;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #D4AF37;
+        }
+        
+        /* بخش هیرو با انیمیشن پیشرفته */
+        .hero {
+            height: 100vh;
+            background: url('https://source.unsplash.com/random/1600x900/?coffee,luxury') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(74, 44, 42, 0.6); /* همپوشانی قهوه‌ای برای تم */
+            z-index: 1;
+        }
+        
+        .hero-content {
+            z-index: 2;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #D4AF37;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        
+        .btn {
+            background: #D4AF37;
+            color: #4A2C2A;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.3s, background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #B8962E;
+            transform: scale(1.05);
+        }
+        
+        /* بخش محصولات با گرید پیشرفته و انیمیشن */
+        .products {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #D4AF37;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            width: 100px;
+            height: 4px;
+            background: #D4AF37;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: #6B3E3C; /* قهوه‌ای متوسط برای کارت‌ها */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: cardFadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes cardFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #F5F5DC;
+        }
+        
+        .product-info p {
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #E0D4C6; /* کرم کمرنگ */
+        }
+        
+        .price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #D4AF37;
+        }
+        
+        /* دکمه تلگرام */
+        .telegram-btn {
+            background: #0088cc; /* رنگ تلگرام */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+            margin-top: 10px;
+            width: 100%;
+        }
+        
+        .telegram-btn:hover {
+            background: #0077b3;
+        }
+        
+        /* فوتر پیشرفته با لینک تلگرام */
+        footer {
+            background: #4A2C2A;
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 1px solid #6B3E3C;
+        }
+        
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: #E0D4C6;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #D4AF37;
+        }
+        
+        /* ریسپانسیو پیشرفته */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">کافه مدرن</div>
+            <ul class="nav-links">
+                <li><a href="#home">خانه</a></li>
+                <li><a href="#products">محصولات</a></li>
+                <li><a href="#about">درباره ما</a></li>
+                <li><a href="#contact">تماس</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>قهوه پیشرفته با طعم مدرن</h1>
+            <p>کشف کنید بهترین دانه‌های قهوه ارگانیک از سراسر جهان، با فناوری دم‌آوری نوین.</p>
+            <button class="btn">خرید حالا</button>
+        </div>
+    </section>
+    
+    <section class="products" id="products">
+        <h2 class="section-title">محصولات ما</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://source.unsplash.com/random/300x200/?espresso,luxury" alt="اسپرسو">
+                <div class="product-info">
+                    <h3>اسپرسو premium</h3>
+                    <p>دانه‌های تازه از برزیل با رست تاریک.</p>
+                    <div class="price">۱۵۰,۰۰۰ تومان</div>
+                    <button class="btn telegram-btn" onclick="window.open('https://t.me/your_telegram_channel', '_blank')">سفارش از تلگرام</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://source.unsplash.com/random/300x200/?latte,coffee" alt="لاته">
+                <div class="product-info">
+                    <h3>لاته ارگانیک</h3>
+                    <p>ترکیب شیر تازه و قهوه عربیکا.</p>
+                    <div class="price">۲۰۰,۰۰۰ تومان</div>
+                    <button class="btn telegram-btn" onclick="window.open('https://t.me/your_telegram_channel', '_blank')">سفارش از تلگرام</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://source.unsplash.com/random/300x200/?cappuccino,modern" alt="کاپوچینو">
+                <div class="product-info">
+                    <h3>کاپوچینو پیشرفته</h3>
+                    <p>با فوم هوشمند و طعم کارامل.</p>
+                    <div class="price">۱۸۰,۰۰۰ تومان</div>
+                    <button class="btn telegram-btn" onclick="window.open('https://t.me/your_telegram_channel', '_blank')">سفارش از تلگرام</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://source.unsplash.com/random/300x200/?coldbrew,premium" alt="کلد برو">
+                <div class="product-info">
+                    <h3>کلد برو سرد</h3>
+                    <p>دم‌آوری سرد با فناوری نانو.</p>
+                    <div class="price">۲۵۰,۰۰۰ تومان</div>
+                    <button class="btn telegram-btn" onclick="window.open('https://t.me/your_telegram_channel', '_blank')">سفارش از تلگرام</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="https://instagram.com/your_instagram">اینستاگرام</a>
+            <a href="https://t.me/your_telegram_channel">تلگرام</a>
+            <a href="#about">درباره ما</a>
+            <a href="#privacy">حریم خصوصی</a>
+        </div>
+        <p>&copy; ۱۴۰۴ کافه مدرن. همه حقوق محفوظ است.</p>
+    </footer>
+    
+    <script>
+        // اسکریپت ساده برای انیمیشن اسکرول (اختیاری)
+        window.addEventListener('scroll', () => {
+            document.querySelector('header').style.background = window.scrollY > 50 ? 'rgba(74, 44, 42, 0.9)' : 'linear-gradient(135deg, #4A2C2A, #6B3E3C)';
+        });
+    </script>
+</body>
+</html>
